@@ -1,33 +1,47 @@
-function octalToDecimal(octal) {
-  let decimal = 0;
-  let digits = octal.split('');
+function octalToDecimal(str) {
+  //Write code here
 
-  for (let i = 0; i < digits.length; i++) {
-    decimal += parseInt(digits[i]) * Math.pow(8, digits.length - i - 1);
+  const newstr = str.split("").reverse()
+
+  let initial = 0;
+  let result = initial;
+  for (let i = 0; i < newstr.length; i++) {
+    let num = Number(newstr[i])
+    result += num * (8 ** i)
   }
-  return decimal;
+  return result
 }
+
 
 function anagram(word, words) {
-  let sortedWord = word.split('').sort().join('');
-  return words.filter(w => {
-    return sortedWord === w.split('').sort().join('');
-  });
+  //Write code here
+  const newarray = [];
+  let string = [...word].sort().join("")
+  for (let i = 0; i < words.length; i++) {
+    if ([...words[i]].sort().join("") === string) {
+      newarray.push(words[i])
+    }
+
+  }
+  return newarray
 }
 
-function triangle(angle1, angle2, angle3) {
-  if (angle1 + angle2 + angle3 !== 180) return 'invalid';
-  if (angle1 > 90 || angle2 > 90 || angle3 > 90) return 'obtuse';
-  if (angle1 < 90 && angle2 < 90 && angle3 < 90) return 'acute';
-  return 'right';
+
+function triangle(a, b, c) {
+  //Write code here
+  const arr = [a, b, c]
+  return arr.reduce((x, y) => x + y) != 180 || arr.some(x => x === 0) ? "invalid" : false ||
+    arr.some(x => x === 90 && x != 0) ? "right" : false || arr.some(x => x > 100) ? "obtuse" : "acute"
 }
 
-function fridayThe13ths(year) {
-  let count = 0;
-  let date = new Date(`${year}-01-13`);
-  while (date.getFullYear() === year) {
-    if (date.getDay() === 5) count++;
-    date.setDate(date.getDate() + 7);
+function fridayThe13ths(int) {
+  //Write code here
+  let count = 0
+  for (let i = 0; i <= 12; i++) {
+    const friday = new Date(int, i,13);
+    if (friday.getDate() && friday.getDay() === 5) {
+      count++
+    }
   }
   return count;
 }
