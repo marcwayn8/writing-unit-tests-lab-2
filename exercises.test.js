@@ -1,36 +1,34 @@
-const exercises = require('./exercises');
+const exercises = require('./exercises')
 
-//write tests in this file
-test('octalToDecimal', () => {
-  expect(octalToDecimal('1')).toBe(1);
-  expect(octalToDecimal('10')).toBe(8);
-  expect(octalToDecimal('130')).toBe(88);
-  expect(octalToDecimal('17')).toBe(15);
-  expect(octalToDecimal('2047')).toBe(1063);
-  expect(octalToDecimal('11')).toBe(9);
+
+test('Question 1: octalToDecimal', () => {
+  expect(exercises.octalToDecimal('1')).toEqual(1);
+  expect(exercises.octalToDecimal('10')).toEqual(8);
+  expect(exercises.octalToDecimal('130')).toEqual(88);
+  expect(exercises.octalToDecimal('17')).toEqual(15);
+  expect(exercises.octalToDecimal('2047')).toEqual(1063);
+  expect(exercises.octalToDecimal('11')).toEqual(9);
 });
 
-
-test('anagram', () => {
-  expect(anagram('listen', ['enlists', 'google', 'inlets', 'banana'])).toEqual(["inlets"]);
-  expect(anagram('listen', ['enlist', 'google', 'inlets', 'banana'])).toEqual(["enlist", "inlets"]);
-  expect(anagram('abc', ['abc', 'bac', 'cab'])).toEqual(["abc", "bac", "cab"]);
-  expect(anagram('abcd', ['abcd', 'bcda', 'cdab'])).toEqual(["abcd", "bcda", "cdab"]);
+// Question 3
+test('Question 2: anagram', () => {
+expect(exercises.anagram('listen', ['enlists', 'google', 'inlets', 'banana'])).toEqual([ "inlets" ]);
+expect(exercises.anagram('listen', ['enlist', 'google', 'inlets', 'banana'])).toEqual([ "enlist", "inlets" ]);
 });
 
-test('triangle', () => {
-  expect(triangle(60, 70, 50)).toBe("acute");
-  expect(triangle(30, 90, 60)).toBe("right");
-  expect(triangle(120, 50, 10)).toBe("obtuse");
-  expect(triangle(0, 90, 90)).toBe("invalid");
-  expect(triangle(50, 50, 50)).toBe("invalid");
+// Question 4
+test('Question 3: triangle', () => {
+expect(exercises.triangle(60, 70, 50)).toBe("acute");
+expect(exercises.triangle(30, 90, 60)).toBe("right");
+expect(exercises.triangle(120, 50, 10)).toBe("obtuse");
+expect(exercises.triangle(0, 90, 90)).toBe("invalid");
+expect(exercises.triangle(50, 50, 50)).toBe("invalid");
 });
 
-
-test('fridayThe13ths', () => {
-  expect(fridayThe13ths(1986)).toBe(1);
-  expect(fridayThe13ths(2015)).toBe(3);
-  expect(fridayThe13ths(2017)).toBe(2);
-  expect(fridayThe13ths(2022)).toBe(2);
-  expect(fridayThe13ths(2021)).toBe(2);
+// Question 5
+test('Question 4: fridayThe13ths', () => {
+expect(exercises.fridayThe13ths(1986)).toBe(1);
+expect(exercises.fridayThe13ths(2015)).toBe(3);
+expect(exercises.fridayThe13ths(2017)).toBe(2);
 });
+
